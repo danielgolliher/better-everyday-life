@@ -341,6 +341,10 @@ em { font-style: italic; }
 .hero-dek span:last-child { font-size: var(--step-1); line-height: 1.32; font-style: italic; color: var(--ink-2); padding-top: 2px; max-width: 22ch; }
 .hero .byline { font-family: var(--font-sans); font-size: 0.66rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); display: flex; flex-wrap: wrap; gap: 6px 22px; padding-top: 16px; border-top: 1px solid var(--rule); }
 .hero .byline b { color: var(--ink); font-weight: 600; }
+/* Personal-capacity disclaimer: delete every .disclaimer element and these rules once approvals come through. */
+p.disclaimer { font-family: var(--font-sans); font-size: 0.76rem; line-height: 1.55; color: var(--ink-2); border-left: 2px solid var(--rule); padding-left: 12px; }
+p.disclaimer b { color: var(--ink); font-weight: 600; }
+.hero-title p.disclaimer { margin-top: -8px; }
 .hero-intro { font-size: 1.08em; color: var(--ink-2); }
 .hero-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 32rem; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .hero-facts > div { padding: 14px 14px 14px 0; display: flex; flex-direction: column; gap: 6px; }
@@ -905,6 +909,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
           <h1>A Better <em>Everyday</em> Life in New York</h1>
           <p class="hero-dek"><span class="numeral">50</span><span>practical ideas to renew the city’s promise of opportunity</span></p>
           <p class="byline"><span>By <b>John Ketcham</b> &amp; <b>Sean Speer</b></span><span>Manhattan Institute</span><span>October 20, 2026</span></p>
+          <p class="disclaimer"><b>Disclaimer:</b> Daniel Golliher made this site as a fun project in a personal capacity, not in an official capacity as a Manhattan Institute Fellow.</p>
           <aside class="start" aria-labelledby="start-h">
             <div class="start__head"><h2 id="start-h">Start here</h2></div>
             <ol>
@@ -1290,7 +1295,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
         <a class="btn btn--solid" href="https://manhattan.institute/article/a-better-everyday-life-in-new-york-50-practical-ideas-to-renew-nycs-promise-of-opportunity">Read the brief</a>
         <a class="btn" href="https://media4.manhattan-institute.org/wp-content/uploads/a-better-everyday-life-in-new-york-50-practical-ideas-to-renew-nycs-promise-of-opportunity.pdf"><svg aria-hidden="true"><use href="#i-down"/></svg>Download the PDF</a>
       </div>
-      <p class="colophon">Idea summaries are condensed and reworded; the brief’s text governs. Charts redraw the brief’s figures; derived values (the implied 2019 rent, rent-plus-care totals, the paycheck calculator) are labeled as such. The block is a composite, not a real place. Interactive edition by Daniel Golliher. <button type="button" class="linkbtn" data-open-glossary>Open the glossary</button></p>
+      <p class="colophon">Idea summaries are condensed and reworded; the brief’s text governs. Charts redraw the brief’s figures; derived values (the implied 2019 rent, rent-plus-care totals, the paycheck calculator) are labeled as such. The block is a composite, not a real place. Interactive edition by Daniel Golliher<span class="disclaimer">, made as a fun project in a personal capacity, not in an official capacity as a Manhattan Institute Fellow</span>. <button type="button" class="linkbtn" data-open-glossary>Open the glossary</button></p>
     </div>
     <div>
       <details class="notes-wrap" id="notes-wrap">

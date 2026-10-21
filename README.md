@@ -1,5 +1,7 @@
 # A Better Everyday Life
 
+> **Disclaimer:** Daniel Golliher made this site as a fun project in a personal capacity, not in an official capacity as a Manhattan Institute Fellow.
+
 An interactive, scrolling edition of a Manhattan Institute issue brief [“A Better Everyday Life in New York: 50 Practical Ideas to Renew NYC’s Promise of Opportunity”](https://manhattan.institute/article/a-better-everyday-life-in-new-york-50-practical-ideas-to-renew-nycs-promise-of-opportunity) by John Ketcham and Sean Speer (October 20, 2026).
 
 The brief’s 50 recommendations are placed one at a time on a composite New York block that changes as you scroll. The page also redraws the brief’s evidence, adds a rent-and-childcare paycheck calculator, an all-50 index with filters, a glossary, and an eight-question quiz.
