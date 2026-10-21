@@ -130,8 +130,8 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); overflow-x: clip; }
-html.no-scroll { overflow: hidden; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); overflow-x: hidden; overscroll-behavior-x: none; }
+html.no-scroll, html.no-scroll body { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0; background: var(--ground); color: var(--ink);
@@ -761,7 +761,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
 .swipe {
   position: fixed; inset: 0; z-index: 110; display: flex; flex-direction: column; align-items: center;
   background: radial-gradient(120% 80% at 50% -10%, #26307a 0%, #151845 45%, #0a0b22 100%); color: #eef0fb;
-  opacity: 0; transition: opacity 0.3s; overscroll-behavior: contain;
+  opacity: 0; transition: opacity 0.3s; overscroll-behavior: none; touch-action: none;
 }
 .swipe[hidden] { display: none; }
 .swipe.open { opacity: 1; }
@@ -776,7 +776,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
 .sw-prog { width: min(520px, calc(100% - 40px)); height: 2px; background: rgba(255,255,255,0.14); border-radius: 2px; overflow: hidden; flex: none; }
 .sw-prog i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #8c9dff, #c3ccff); transition: width 0.35s; }
 .sw-count { font-family: var(--font-sans); font-size: 0.58rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(238,240,251,0.55); margin-top: 8px; flex: none; }
-.sw-stage { position: relative; flex: 1; width: 100%; min-height: 0; display: flex; justify-content: center; align-items: center; padding: 12px 16px 6px; }
+.sw-stage { position: relative; flex: 1; width: 100%; min-height: 0; display: flex; justify-content: center; align-items: center; padding: 12px 16px 44px; }
 .sw-deck { position: relative; width: min(400px, 100%); height: min(600px, 100%); }
 .sw-card {
   position: absolute; inset: 0; background: var(--surface); color: var(--ink); border-radius: 26px; overflow: hidden;
@@ -800,7 +800,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
 .sw-stamp.s-like { left: 20px; color: var(--blue); transform: rotate(-14deg); }
 .sw-stamp.s-nope { right: 20px; color: var(--bad); transform: rotate(14deg); }
 .sw-stamp.s-super { left: 50%; top: 30%; color: var(--orange-ink); transform: translateX(-50%) rotate(-6deg); border-color: var(--orange); }
-.sw-ctl { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 10px 0 max(20px, env(safe-area-inset-bottom, 0px)); flex: none; }
+.sw-ctl { position: relative; z-index: 20; display: flex; align-items: center; justify-content: center; gap: 18px; padding: 4px 0 max(20px, env(safe-area-inset-bottom, 0px)); flex: none; }
 .sw-ctl button { appearance: none; width: 64px; height: 64px; border-radius: 50%; border: 0; background: #ffffff; box-shadow: 0 14px 30px -12px rgba(0,0,0,0.7); display: grid; place-items: center; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; }
 .sw-ctl button:hover { transform: translateY(-2px) scale(1.04); }
 .sw-ctl button:active { transform: scale(0.94); }
