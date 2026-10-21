@@ -1183,7 +1183,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
     <div class="facts-block" aria-label="About this part">
       <div>Ideas</div><div>50, in the brief’s order</div>
       <div>Areas</div><div>7</div>
-      <div>Card text</div><div>Condensed; each card links to MI’s wording</div>
+      <div>Card text</div><div>Condensed; each card links to MI’s full take</div>
     </div>
   </header>
   <div class="scrolly" id="s-ideas">
@@ -2084,7 +2084,7 @@ BEL.QUIZ = [
         html += '<div class="step step--idea" id="idea-' + i.n + '" data-state=\'{"idea":' + i.n + '}\'><article class="step__card idea">' +
           '<div class="idea__top"><span class="idea__num">' + pad(i.n) + '</span></div>' +
           '<h3>' + i.t + '</h3><p>' + terms(i.d) + '</p>' +
-          '<a class="brief-link" href="' + briefLink(i) + '" target="_blank" rel="noopener">Read MI’s exact wording in the full brief ↗</a>' +
+          '<a class="brief-link" href="' + briefLink(i) + '" target="_blank" rel="noopener">Read MI’s full take ↗</a>' +
           '<div class="idea__foot"><a href="' + note[2] + '" title="' + esc(note[1]) + '">' + esc(note[0]) + ' ↗</a><a href="#n' + i.note + '">Note ' + i.note + '</a>' +
           (i.p ? '<span class="partner">With ' + i.p + '</span>' : '') + starBtn(i.n) + '</div>' +
           '</article></div>';
