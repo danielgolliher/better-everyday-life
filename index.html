@@ -148,10 +148,8 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 500; line-height: 
 p { margin: 0; text-wrap: pretty; }
 strong { font-weight: 600; }
 em { font-style: italic; }
-.label, .eyebrow { font-family: var(--font-sans); font-size: var(--label); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: var(--ink-3); }
+.label { font-family: var(--font-sans); font-size: var(--label); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: var(--ink-3); }
 .label { color: var(--blue); }
-.eyebrow { display: inline-flex; align-items: center; gap: 10px; }
-.eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; opacity: 0.7; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .wrap { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
 .skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--blue); color: var(--on-blue); padding: 8px 14px; border-radius: 999px; font-family: var(--font-sans); }
@@ -210,10 +208,6 @@ em { font-style: italic; }
 /* ---------- Generic part chrome ---------- */
 .sheet { position: relative; padding-block: clamp(80px, 11vw, 150px) 0; }
 .sheet-head { max-width: 1240px; margin: 0 auto clamp(36px, 5vw, 64px); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px 48px; align-items: end; }
-.sheet-head__num { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
-.tag { font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; font-weight: 400; letter-spacing: 0; color: var(--blue); }
-.kicker { font-family: var(--font-sans); font-size: var(--label); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); display: inline-flex; align-items: center; gap: 12px; }
-.kicker::before { content: ""; width: 28px; height: 1px; background: var(--rule); }
 .sheet-head h2 { font-size: var(--step-3); font-weight: 400; max-width: 16ch; letter-spacing: -0.025em; line-height: 1.02; }
 .sheet-head .dek { margin-top: 18px; font-size: var(--step-1); line-height: 1.45; color: var(--ink-2); max-width: 36ch; font-style: italic; font-weight: 400; }
 .facts-block { font-family: var(--font-sans); font-size: 0.74rem; display: grid; grid-template-columns: auto auto; min-width: 270px; color: var(--ink-2); border-top: 1px solid var(--ink); }
@@ -337,10 +331,6 @@ em { font-style: italic; }
 
 /* ---------- Hero ---------- */
 .hero-title { display: flex; flex-direction: column; gap: 22px; padding-top: clamp(20px, 4vh, 48px); max-width: 33rem; }
-.hero-eyebrow { font-family: var(--font-sans); font-size: var(--label); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); display: inline-flex; align-items: center; gap: 12px; }
-.hero-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--blue); flex: none; }
-.hero-eyebrow > span { line-height: 1.7; }
-.hero-eyebrow b { color: var(--ink); font-weight: 600; }
 .hero h1 { font-size: var(--step-4); font-weight: 300; line-height: 0.94; letter-spacing: -0.035em; }
 .hero h1 em { color: var(--blue); font-weight: 300; }
 .hero-dek { display: flex; align-items: flex-start; gap: 16px; padding-top: 6px; }
@@ -496,7 +486,6 @@ em { font-style: italic; }
 .idea { gap: 0.8em; }
 .idea__top { display: flex; align-items: flex-end; gap: 14px; }
 .idea__num { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 3.6rem; line-height: 0.78; color: var(--blue); font-variant-numeric: lining-nums tabular-nums; letter-spacing: -0.04em; }
-.idea__area { padding-bottom: 3px; color: var(--ink-3); }
 .idea p { color: var(--ink-2); }
 .idea__foot { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding-top: 14px; border-top: 1px solid var(--rule); font-family: var(--font-sans); font-size: 0.72rem; }
 .idea__foot a { font-weight: 500; text-decoration: none; color: var(--ink-3); }
@@ -688,7 +677,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
 /* ---------- Quiz ---------- */
 .quiz { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
 .q { border: 1px solid var(--rule-2); background: var(--surface); border-radius: var(--r); box-shadow: 0 16px 34px -30px rgba(20, 22, 58, 0.5); padding: 22px 24px; display: flex; flex-direction: column; gap: 12px; }
-.q__n { font-family: var(--font-sans); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
 .q h3 { font-size: 1.35rem; font-weight: 400; letter-spacing: -0.01em; }
 .q__opts { display: flex; flex-direction: column; gap: 8px; }
 .q__opts button {
@@ -911,12 +899,11 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
     <div class="scrolly__steps">
       <div class="step step--hero" data-state='{"cam":"all","zones":true}'>
         <div class="step__card hero-title">
-          <span class="hero-eyebrow"><span><b>Manhattan Institute</b> · Issue brief · Interactive edition</span></span>
           <h1>A Better <em>Everyday</em> Life in New York</h1>
           <p class="hero-dek"><span class="numeral">50</span><span>practical ideas to renew the city’s promise of opportunity</span></p>
-          <p class="byline"><span>By <b>John Ketcham</b> &amp; <b>Sean Speer</b></span><span>October 20, 2026</span></p>
+          <p class="byline"><span>By <b>John Ketcham</b> &amp; <b>Sean Speer</b></span><span>Manhattan Institute</span><span>October 20, 2026</span></p>
           <aside class="start" aria-labelledby="start-h">
-            <div class="start__head"><h2 id="start-h">Start here</h2><span class="eyebrow">Three ways in</span></div>
+            <div class="start__head"><h2 id="start-h">Start here</h2></div>
             <ol>
               <li><p><b>Read it in order</b>, from the evidence to the ideas, or skip straight to the 50 recommendations.</p><a class="go" href="#homes">Skip to the 50</a></li>
               <li><p><b>Star what you like.</b> Ideas and glossary terms you star collect in a menu you can email to yourself.</p><a class="go" href="#mylist">See my menu</a></li>
@@ -934,7 +921,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
       </div>
       <div class="step" id="s1" data-state='{"cam":"homes"}'>
         <div class="step__card">
-          <span class="label">Part 01 · Common ground</span>
           <h3>Quality of life isn’t a right-wing cause.</h3>
           <p>Mayor Zohran Mamdani has observed that “quality of life” and “efficiency” came to sound like conservative words, and he warned his own side against ceding the basics of city government because of it.</p>
           <blockquote class="pull"><p>“If politics cannot deliver on the block where you live…”</p><cite>Mayor Zohran Mamdani<a class="fn" href="#n1">1</a></cite></blockquote>
@@ -943,7 +929,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
       </div>
       <div class="step" data-state='{"cam":"streets"}'>
         <div class="step__card">
-          <span class="label">An old phrase</span>
           <h3>“Quality of life” is broader than its politics.</h3>
           <p>The phrase entered the policy vocabulary in the 1960s and ’70s to name the parts of human welfare that income alone misses: health, housing, education, the environment, the feel of daily life.</p>
           <p>In New York it took on a narrower meaning in the Giuliani years, standing for orderly streets, clean public spaces, and a city government that sweats the small, cumulative stuff.</p>
@@ -951,7 +936,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
       </div>
       <div class="step" data-state='{"cam":"all","zones":true}'>
         <div class="step__card">
-          <span class="label">The definition</span>
           <h3>The brief uses the broad, practical sense.</h3>
           <p>Quality of life is the set of conditions that decide whether ordinary New Yorkers can build a good life here:</p>
           <ol class="five">
@@ -965,7 +949,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
       </div>
       <div class="step" data-state='{"cam":"all","alarm":true}'>
         <div class="step__card">
-          <span class="label">The problem</span>
           <h3>Measured that way, the promise is under strain.</h3>
           <p>Jobs that let service and blue-collar workers get ahead have shrunk. Rising incomes have bought most people little. Housing and childcare cost a fortune. Schools and public safety add to the pressure.</p>
           <p>The question underneath: can someone of ordinary means still come to New York and make a better life? The red marks on the block are the problems the brief documents.</p>
@@ -973,7 +956,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
       </div>
       <div class="step" data-state='{"cam":"all"}'>
         <div class="step__card">
-          <span class="label">This guide</span>
           <h3>First the evidence, then the 50 ideas.</h3>
           <p>Part 02 lays out the numbers behind the brief’s worry. Parts 03 through 09 take the recommendations in order. Each one lands on this block as a numbered pin, and the block changes as you scroll: blue marks what an idea adds, red marks the problem it targets.</p>
           <p>The ideas draw on the Manhattan Institute’s catalog of New York City research. Some are City Hall’s to do alone; others need Albany or another agency.</p>
@@ -988,7 +970,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
 <section class="sheet wrap" id="evidence">
   <header class="sheet-head">
     <div>
-      <div class="sheet-head__num"><span class="tag">Part 02</span><span class="kicker">The evidence</span></div>
       <h2>Under pressure</h2>
       <p class="dek">Work, income, rent, care, school, safety, and who is leaving. Eight numbers that frame the brief.</p>
     </div>
@@ -1090,7 +1071,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
     <div class="scrolly__steps">
       <div class="step" data-state='{"ev":0}'>
         <div class="step__card">
-          <span class="label">Work</span>
           <h3>The middle rungs of the job ladder broke first.</h3>
           <p>Between 2019 and 2023, industries paying middle wages shed more than 76,000 jobs, a 4.7% drop, with construction hit hardest. Lower-wage industries grew only 1.5%.<a class="fn" href="#n2">2</a></p>
           <p>Those are the jobs that let people without a professional degree get established and support a family.</p>
@@ -1098,7 +1078,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
       </div>
       <div class="step" data-state='{"ev":1}'>
         <div class="step__card">
-          <span class="label">Recovery</span>
           <h3>The weakness outlasted the rebound.</h3>
           <p>Six industries were still below their late-2019 employment at the end of 2025, according to the state comptroller.<a class="fn" href="#n4">4</a> Youth unemployment averaged 11.9% in 2025.</p>
           <p>A booming finance or tech sector can’t, by itself, give every New Yorker a route to a good living. Rebuilding the middle class takes a broader base of work and enterprise.<a class="fn" href="#n5">5</a></p>
@@ -1106,7 +1085,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
       </div>
       <div class="step" data-state='{"ev":2}'>
         <div class="step__card">
-          <span class="label">Income</span>
           <h3>Gains at the top, a flat line below.</h3>
           <p>From 2019 to 2024, real average income per <button class="term" data-term="taxunit">tax unit</button> rose 8.9%. For the bottom 90%, it fell 0.8%; adjusting for the growing share of single filers turns that into a 0.4% gain.<a class="fn" href="#n6">6</a></p>
           <p>Not everyone stood still: the New School found real wage gains in the middle of the pay scale.<a class="fn" href="#n7">7</a> But the city needs more openings for people trying to find work or move up.</p>
@@ -1114,7 +1092,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
       </div>
       <div class="step" data-state='{"ev":3}'>
         <div class="step__card">
-          <span class="label">Rent</span>
           <h3>Housing ate what raises there were.</h3>
           <p>The city’s <button class="term" data-term="asking">median asking rent</button> hit $3,707 a month in the spring of 2026, more than 30% above 2019: roughly $10,400 more a year.<a class="fn" href="#n8">8</a></p>
           <p>A city that needs electricians and line cooks has to let enough housing get built for them to live near their jobs.</p>
@@ -1122,7 +1099,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
       </div>
       <div class="step" data-state='{"ev":4}'>
         <div class="step__card">
-          <span class="label">Care</span>
           <h3>Childcare costs as much as a second rent.</h3>
           <p>Infant and toddler care averaged $18,200 a year in family-based settings and $26,000 in centers in 2024.<a class="fn" href="#n9">9</a> Between rent and care, a respectable salary can vanish.</p>
           <p>Costs like these shape whether people have children, start businesses, or stay in New York at all.</p>
@@ -1130,7 +1106,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
       </div>
       <div class="step" data-state='{"ev":5}'>
         <div class="step__card">
-          <span class="label">Schools</span>
           <h3>Many children simply aren’t in class.</h3>
           <p>In 2023–24, 34.8% of city public-school students were <button class="term" data-term="absent">chronically absent</button>. Among students in temporary housing, 51.7% were.<a class="fn" href="#n10">10</a></p>
           <p>Schools can’t do much for a child who routinely isn’t there. Tap the buttons on the chart to compare.</p>
@@ -1138,7 +1113,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
       </div>
       <div class="step" data-state='{"ev":6}'>
         <div class="step__card">
-          <span class="label">Safety</span>
           <h3>Fewer murders, but the streets aren’t fixed.</h3>
           <p>Through September 20, preliminary NYPD figures showed murders down 24.4% from the same stretch of 2025, and the <button class="term" data-term="majorseven">seven major crimes</button> down 6.34%.<a class="fn" href="#n11">11</a></p>
           <p>Yet felony assaults sit about 44% above 2019, and subway-system homicides run several times their old average.<a class="fn" href="#n12">12</a><a class="fn" href="#n13">13</a> Disorder and harassment still keep people out of public spaces.</p>
@@ -1146,7 +1120,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
       </div>
       <div class="step" data-state='{"ev":7}'>
         <div class="step__card">
-          <span class="label">Leaving</span>
           <h3>The families walking out are the middle class.</h3>
           <p>Among families with children under five who left the city in 2023, 51% were middle income, compared with 43% of such families overall.<a class="fn" href="#n14">14</a></p>
           <p>People move for many reasons, so no single policy can be blamed. But City Hall should ask what would make staying more attractive. The answer matters just as much to those who can’t leave.</p>
@@ -1194,7 +1167,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
     <p class="lede">The brief’s diagnosis is that these conditions are mostly the product of choices.</p>
     <p>Rents are high because decades of zoning and property-tax rules made rental housing hard and costly to build. Disorder lingers where enforcement has slackened. Children miss school when nobody is held responsible for getting them there. Across administrations, City Hall and Albany have left many New Yorkers paying more in taxes for weaker services. The pandemic and national trends, the authors argue, can’t explain why these problems have lasted.</p>
     <aside class="aside">
-      <span class="label">The offer</span>
       <p>The mayor invited fellow progressives to take quality of life seriously. The authors write that they want to help, that agreeing on the goal won’t settle every policy fight, and that if the mayor adopts these ideas and makes progress, they will welcome it.</p>
     </aside>
   </div>
@@ -1204,7 +1176,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
 <section class="sheet wrap" id="ideas">
   <header class="sheet-head">
     <div>
-      <div class="sheet-head__num"><span class="tag">Parts 03–09</span><span class="kicker">The recommendations</span></div>
       <h2>Fifty ideas, one block</h2>
       <p class="dek">Each idea lands on the block as a pin. Scroll, and watch the street change.</p>
       <div class="swipe-cta"><p>Rather decide quickly? Swipe through all 50, one card at a time.</p><button class="btn btn--solid" type="button" data-open-swipe><svg aria-hidden="true"><use href="#i-swipe"/></svg>Swipe Mode</button></div>
@@ -1231,7 +1202,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
 <section class="sheet wrap" id="all">
   <header class="sheet-head">
     <div>
-      <div class="sheet-head__num"><span class="tag">Part 10</span><span class="kicker">At a glance</span></div>
       <h2>All 50 on one page</h2>
       <p class="dek">Filter by area or by the partner the brief names. Star the ones you’d do first.</p>
     </div>
@@ -1252,7 +1222,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
   <div class="menu" id="mylist">
     <div class="menu__head">
       <div>
-        <span class="eyebrow">Your menu</span>
         <h3>Everything you <em>starred</em>, in one place</h3>
         <p>Star ideas and glossary terms anywhere on the page, or run Swipe Mode. It all collects here, stays in this browser, and goes out in one email to yourself.</p>
       </div>
@@ -1279,7 +1248,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
 <section class="sheet wrap" id="check">
   <header class="sheet-head">
     <div>
-      <div class="sheet-head__num"><span class="tag">Part 11</span><span class="kicker">Check yourself</span></div>
       <h2>What stuck?</h2>
       <p class="dek">Eight questions. Every answer explains itself, so wrong ones teach too.</p>
     </div>
@@ -1299,11 +1267,11 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
   <div style="margin-top: clamp(48px, 7vw, 88px)">
     <div class="figure__head" style="max-width:1100px;margin:0 auto 14px"><h3>The argument in five lines</h3></div>
     <div class="takeaways">
-      <div><span class="label">Frame</span><h3>Quality of life is common ground.</h3><p>Work, a home, schools, safe streets, and decent services matter to New Yorkers of every party.</p></div>
-      <div><span class="label">Squeeze</span><h3>Ordinary earners are losing ground.</h3><p>Middle-wage jobs shrank, incomes for most stalled, and rent and childcare climbed.</p></div>
-      <div><span class="label">Basics</span><h3>School and safety come first.</h3><p>A third of students are chronically absent; felony assaults remain far above 2019.</p></div>
-      <div><span class="label">Cause</span><h3>Policy made this.</h3><p>Zoning, taxes, slack enforcement, and weak accountability, set at City Hall and in Albany.</p></div>
-      <div><span class="label">Remedy</span><h3>Fifty practical fixes.</h3><p>Most are City Hall’s to start. Some need Albany, the council, or the MTA.</p></div>
+      <div><h3>Quality of life is common ground.</h3><p>Work, a home, schools, safe streets, and decent services matter to New Yorkers of every party.</p></div>
+      <div><h3>Ordinary earners are losing ground.</h3><p>Middle-wage jobs shrank, incomes for most stalled, and rent and childcare climbed.</p></div>
+      <div><h3>School and safety come first.</h3><p>A third of students are chronically absent; felony assaults remain far above 2019.</p></div>
+      <div><h3>Policy made this.</h3><p>Zoning, taxes, slack enforcement, and weak accountability, set at City Hall and in Albany.</p></div>
+      <div><h3>Fifty practical fixes.</h3><p>Most are City Hall’s to start. Some need Albany, the council, or the MTA.</p></div>
     </div>
   </div>
 </section>
@@ -2108,14 +2076,13 @@ BEL.QUIZ = [
     var html = '';
     BEL.AREAS.forEach(function (a) {
       html += '<div class="step step--chapter" id="' + a.id + '" data-state=\'{"chapter":"' + a.id + '"}\'><div class="step__card chapter">' +
-        '<div class="sheet-head__num"><span class="tag">Part ' + a.num + '</span><span class="kicker">Ideas ' + a.from + '–' + a.to + '</span></div>' +
         '<h2>' + a.name + '</h2><p class="dek">' + a.dek + '</p>' +
         '<div class="chapter__stats">' + a.stats.map(function (s) { return '<div><span class="v">' + s[0] + '</span><span class="k">' + s[1] + '</span></div>'; }).join('') + '</div>' +
         '</div></div>';
       BEL.IDEAS.filter(function (i) { return i.a === a.id; }).forEach(function (i) {
         var note = BEL.NOTES[i.note];
         html += '<div class="step step--idea" id="idea-' + i.n + '" data-state=\'{"idea":' + i.n + '}\'><article class="step__card idea">' +
-          '<div class="idea__top"><span class="idea__num">' + pad(i.n) + '</span><span class="label idea__area">' + a.short + ' · ' + (i.n - a.from + 1) + ' of ' + (a.to - a.from + 1) + '</span></div>' +
+          '<div class="idea__top"><span class="idea__num">' + pad(i.n) + '</span></div>' +
           '<h3>' + i.t + '</h3><p>' + terms(i.d) + '</p>' +
           '<a class="brief-link" href="' + briefLink(i) + '" target="_blank" rel="noopener">Read MI’s exact wording in the full brief ↗</a>' +
           '<div class="idea__foot"><a href="' + note[2] + '" title="' + esc(note[1]) + '">' + esc(note[0]) + ' ↗</a><a href="#n' + i.note + '">Note ' + i.note + '</a>' +
@@ -2124,7 +2091,7 @@ BEL.QUIZ = [
       });
     });
     html += '<div class="step step--chapter" id="ideas-end" data-state=\'{"end":true}\'><div class="step__card chapter">' +
-      '<span class="label">The whole block</span><h2>Fifty ideas, applied</h2>' +
+      '<h2>Fifty ideas, applied</h2>' +
       '<p class="dek">Every dot on the block is a recommendation. Hover one to see which; click to jump back to it.</p>' +
       '<p>The authors present them as an offer: practical steps, most within City Hall’s reach, that any mayor could take, with progress welcomed whoever makes it.</p>' +
       '<div class="btn-row"><a class="btn btn--solid" href="#all">See all 50 on one page</a><button class="btn" type="button" data-open-swipe><svg aria-hidden="true"><use href="#i-swipe"/></svg>Swipe Mode</button></div></div></div>';
@@ -2719,7 +2686,7 @@ BEL.QUIZ = [
     }
     function showResults() {
       var g = M.groups(), left = rest().length;
-      res.innerHTML = '<div class="sw-res"><span class="eyebrow">Swipe Mode</span><h2>Your <em>verdicts</em></h2>' +
+      res.innerHTML = '<div class="sw-res"><h2>Your <em>verdicts</em></h2>' +
         '<p>' + (left ? 'You’ve judged ' + g.total + ' of 50 so far.' : 'You’ve judged all 50 ideas.') + ' These can go in the email from your menu.</p>' +
         '<div class="sw-cols">' + col('c-super', 'Super-liked', g['super']) + col('c-like', 'Liked', g.like) + col('c-nope', 'Passed', g.nope) + '</div>' +
         '<label class="check" style="margin-top:20px"><input type="checkbox" data-sw-include' + (M.include ? ' checked' : '') + (g.total ? '' : ' disabled') + '> Include these in the email to myself</label>' +
@@ -2776,7 +2743,7 @@ BEL.QUIZ = [
     function build() {
       answered = 0; right = 0;
       host.innerHTML = BEL.QUIZ.map(function (q, qi) {
-        return '<div class="q" data-q="' + qi + '"><span class="q__n">Question ' + (qi + 1) + ' of ' + BEL.QUIZ.length + '</span><h3>' + q.q + '</h3>' +
+        return '<div class="q" data-q="' + qi + '"><h3><span class="sr-only">Question ' + (qi + 1) + ' of ' + BEL.QUIZ.length + ': </span>' + q.q + '</h3>' +
           '<div class="q__opts">' + q.o.map(function (o, oi) { return '<button type="button" data-o="' + oi + '"><b>' + 'ABC'[oi] + '</b><span>' + o + '</span></button>'; }).join('') + '</div>' +
           '<p class="q__why" hidden>' + q.why + '</p></div>';
       }).join('');
